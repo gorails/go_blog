@@ -5,3 +5,30 @@ test/dummy/db/*.sqlite3
 test/dummy/db/*.sqlite3-journal
 test/dummy/log/*.log
 test/dummy/tmp/
+
+
+# Ignore bundler config.
+/.bundle
+
+# Ignore all logfiles and tempfiles.
+/log/*
+!/log/.keep
+/tmp
+.byebug_history
+.DS_Store
+.idea
+.vagrant
+.ruby-version
+.ruby-gemset
+/public/uploads/*
+schema.rb
+config/initializers/secret_token.rb
+/coverage/*
+
+# Ignore application configuration
+/config/application.yml
+newrelic.yml
+/config/database.yml
+/config/application.yml
+/config/secrets.yml
+/config/initializers/setup_mail.rb
