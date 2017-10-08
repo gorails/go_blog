@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.version     = GoBlog::VERSION
   s.authors     = ["João Carlos Ottobboni"]
   s.email       = ["jcottobboni@gmail.com"]
-  s.homepage    = "www.gorails.com.br"
+  s.homepage    = "http://www.gorails.com.br"
   s.summary     = "blog engine"
   s.description = "blog engine"
   s.license     = "MIT"
