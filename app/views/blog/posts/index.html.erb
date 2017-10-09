@@ -1,0 +1,43 @@
+<%= provide :page_title, I18n.t('blog_post.index.header') %>
+<%= provide :breadcrumb do %>
+    <li><%= I18n.t('activerecord.models.blog_post.other') %></li>
+<% end %>
+
+<main id="main-container" style="min-height: 530px;">
+  <div class="content bg-gray-lighter">
+    <div class="row items-push">
+      <div class="col-sm-7">
+        <h1 class="page-heading">
+          <%= t('blog_posts.index.title') %>
+        </h1>
+      </div>
+    </div>
+  </div>
+  <div class="content">
+    <div class="block">
+      <div class="block-header text-right">
+        <h3 class="block-title">
+        </h3>
+        <span >
+          <%= link_to I18n.t('blog_post.new.header'), new_blog_post_path, class: 'btn btn-sm btn-square btn-success' %>
+
+        </span>
+      </div>
+      <div class="block-content">
+        <table class="table table-striped">
+          <thead>
+          <tr>
+            <th><%=t 'activerecord.attributes.blog_post.name' %></th>
+            <th><%=t 'activerecord.attributes.blog_post.link' %></th>
+            <th><%=t 'activerecord.attributes.blog_post.link_category' %></th>
+            <th class="text-center" style="width: 150px;"><%=t 'misc.actions' %></th>
+          </tr>
+          </thead>
+          <tbody id='blog_posts'>
+          <%= render 'collection', collection: @blog_posts %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</main>

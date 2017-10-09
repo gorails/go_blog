@@ -1,0 +1,20 @@
+<% collection.each do |resource| %>
+    <tr id="<%= dom_id(resource) %>">
+      <td><%= resource.title %></td>
+      <td><%= truncate_with_hover(resource.teaser.html_safe,30)  %></td>
+      <td><%= truncate_with_hover(resource.body.html_safe,30) %></td>
+      <td><%= resource.draft %></td>
+      <td><%= resource.published_at %></td>
+      <td><%= resource.user_id %></td>
+      <td><%= resource.custom_url %></td>
+      <td><%= resource.access_count %></td>
+      <td class="text-center">
+        <% if current_user and current_user.admin? %>
+            <%= resource.decorate.link_to_show %>
+            <%= resource.decorate.link_to_edit %>
+            <%= resource.decorate.link_to_delete %>
+        <% end %>
+      </td>
+      </td>
+    </tr>
+<% end %>

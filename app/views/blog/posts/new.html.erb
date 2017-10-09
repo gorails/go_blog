@@ -1,0 +1,27 @@
+
+
+<%= provide :page_title, I18n.t('blog_posts.new.header') %>
+<%= provide :breadcrumb do %>
+    <li><%= link_to  t('activerecord.models.blog_post.other'), links_path %></li>
+    <li><%=t 'blog_posts.new.header' %></li>
+<% end %>
+
+<main id="main-container" style="min-height: 530px;">
+  <div class="content bg-gray-lighter">
+    <div class="row items-push">
+      <div class="col-sm-7">
+        <h1 class="page-heading">
+          <%= I18n.t('blog_posts.new.title') %>
+        </h1>
+      </div>
+    </div>
+  </div>
+  <div class="content">
+    <div class="block">
+      <div class="block-content">
+        <%= render 'form' %>
+      </div>
+    </div>
+  </div>
+</main>
+

@@ -1,0 +1,26 @@
+<% collection.each do |resource| %>
+    <div class="block" id="<%= dom_id(resource) %>">
+      <div class="block-content">
+        <div class="row items-push">
+          <div class="col-md-4">
+            <a href="frontend_blog_story.php">
+              <img class="img-responsive" src="assets/img/photos/photo21.jpg" alt="">
+            </a>
+          </div>
+          <div class="col-md-12">
+            <div class="font-s12 push-10">
+              <em class="pull-right"><!--10 min--></em>
+              <a href="base_pages_profile.php"><%= resource.user.decorate.name %></a> <%= converte_date(resource.published_at) %>
+            </div>
+            <h4 class="text-uppercase push-10">
+              <%= resource.decorate.link_to_title %></h4>
+            <p class="push-20"><%= resource.teaser.html_safe %></p>
+            <div class="btn-group btn-group-sm">
+              <!--<a class="btn btn-default" href="javascript:void(0)"><i class="fa fa-share-alt push-5-r"></i> Compartilhar</a>-->
+              <%= resource.decorate.link_to_read_more %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+<% end %>

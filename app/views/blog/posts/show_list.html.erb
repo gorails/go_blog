@@ -1,0 +1,28 @@
+
+<main id="main-container" style="min-height: 190px;"><div class="bg-image" style="background-image: url('<%=asset_path "railswall.jpg"%>');">
+  <div class="bg-primary-op">
+    <section class="content content-full content-boxed overflow-hidden">
+      <div class="push-150-t push-150 text-center">
+        <h1 class="text-white push-10 animated fadeInDown" data-toggle="appear" data-class="animated fadeInDown"><%= @blog_post.title %></h1>
+      </div>
+    </section>
+  </div>
+</div>
+  <div class="bg-white">
+    <section class="content content-boxed">
+      <div class="text-center">
+        <a class="link-effect font-s13 font-w600" href="javascript:void(0)"><%= @blog_post.user.decorate.name %></a> <%= converte_date(@blog_post.published_at) %> <em></em>
+      </div>
+      <div class="row push-50-t push-50 nice-copy-story">
+        <div class="col-sm-8 col-sm-offset-2">
+          <p><%= @blog_post.body.html_safe %></p>
+
+
+        </div>
+      </div>
+    </section>
+  </div>
+
+</main>
+
+

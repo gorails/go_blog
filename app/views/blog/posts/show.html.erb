@@ -1,0 +1,87 @@
+<%= provide :page_title, I18n.t('blog_posts.show.header', resource: @blog_post.try(:id)) %>
+<%= provide :breadcrumb do %>
+    <li><%= link_to I18n.t('activerecord.models.blog_posts.other'), links_path %></li>
+    <li><%= link_to @blog_post.try(:id), @blog_post %></li>
+    <li><%= I18n.t('blog_posts.show.header', resource: @blog_post.try(:id)) %></li>
+<% end %>
+
+<main id="main-container" style="min-height: 530px;">
+  <div class="content bg-gray-lighter">
+    <div class="row items-push">
+      <div class="col-sm-7">
+        <h1 class="page-heading">
+          <%= t('blog_posts.show.title') %>
+        </h1>
+      </div>
+    </div>
+  </div>
+  <div class="content">
+    <div class="block">
+      <div class="block-header text-right">
+        <h3 class="block-title">
+        </h3>
+        <span>
+          <%= link_to I18n.t('blog_posts.new.new'), new_blog_post_path, class: 'btn btn-sm btn-square btn-success' %>
+        </span>
+      </div>
+      <div class="block-content">
+        <div class="row">
+
+          <div class="col-sm-12">
+            <table class="table table-striped">
+              <thead>
+              </thead>
+              <tbody>
+              <tr>
+                <td><strong><%= t 'activerecord.attributes.blog_post.title' %>:</strong></td>
+                <td><%= @blog_post.title %></td>
+              </tr>
+
+              <tr>
+                <td><strong><%= t 'activerecord.attributes.blog_post.teaser' %>:</strong></td>
+                <td><%= @blog_post.teaser.html_safe %></td>
+              </tr>
+
+              <tr>
+                <td><strong><%= t 'activerecord.attributes.blog_post.body' %>:</strong></td>
+                <td><%= @blog_post.body.html_safe %></td>
+              </tr>
+
+              <tr>
+                <td><strong><%= t 'activerecord.attributes.blog_post.draft' %>:</strong></td>
+                <td><%= @blog_post.draft %></td>
+              </tr>
+
+              <tr>
+                <td><strong><%= t 'activerecord.attributes.blog_post.published_at' %>:</strong></td>
+                <td><%= @blog_post.published_at %></td>
+              </tr>
+
+              <tr>
+                <td><strong><%= t 'activerecord.attributes.blog_post.custom_url' %>:</strong></td>
+                <td><%= @blog_post.custom_url %></td>
+              </tr>
+
+              <tr>
+                <td><strong><%= t 'activerecord.attributes.blog_post.access_count' %>:</strong></td>
+                <td><%= @blog_post.access_count %></td>
+              </tr>
+
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="row">
+
+          <div class="col-sm-4 ">
+            <%= link_to I18n.t('misc.action.back'), blog_posts_path, class: 'btn btn-default' %>
+            <%= link_to I18n.t('misc.action.edit'), edit_blog_post_path(@blog_post), class: 'btn btn-warning' %>
+            <%= link_to I18n.t('misc.action.destroy'), blog_post_path(@blog_post), method: :destroy, data: {confirm: I18n.t('blog_post.show.remover')}, class: 'btn btn-danger' %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+

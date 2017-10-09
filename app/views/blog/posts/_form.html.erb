@@ -1,0 +1,32 @@
+<%= simple_form_for @blog_post, class: "form-horizontal" do |f| %>
+    <%= f.error_notification %>
+
+    <%= f.hidden_field :user_id, id: :blog_post_user_id, value: current_user.id %>
+
+    <%= f.input :title, id: :blog_post_title %>
+
+    <%= f.input :teaser, as: :summernote %>
+    <%= f.input :body, as: :summernote %>
+    <%#= f.input :teaser, class: 'summernote', :id => 'blog_post_teaser' , label: false%>
+    <%#= f.input :body, class: 'summernote', :id => 'blog_post_body', label: false %>
+    <%= f.input :draft, id: :blog_post_draft %>
+
+    <%= f.input :published_at, id: :blog_post_published_at %>
+
+    <%= f.input :custom_url, id: :blog_post_custom_url %>
+
+
+
+    <div class="form-group form-actions">
+      <%= link_to I18n.t('misc.action.back'), blog_posts_path, class: 'btn btn-sm btn-square btn-default' %>
+      <%= f.button :submit, class: 'btn btn-sm btn-square btn-primary' %>
+    </div>
+<% end %>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#blog_post_teaser').summernote();
+        $('#blog_post_body').summernote();
+    });
+</script>
+
