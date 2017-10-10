@@ -1,21 +1,23 @@
 module Blog
   class PostsController < ApplicationController
-    before_action :set_blog_post, only: [:show, :edit, :update, :destroy,:show_list]
+    before_action :set_blog_post, only: [:show, :edit, :update, :destroy, :show_list]
     before_action :authenticate_user!, except: [:list, :show_list]
-    load_and_authorize_resource except: [:list, :show_list,:create]
+    load_and_authorize_resource except: [:list, :show_list, :create]
     # GET /blog/posts
     def index
-      @blog_posts = Post.all
+      @blog_posts = Post.all.page params[:page]
     end
 
     def list
-      @blog_posts = Post.all
+      @blog_posts = Post.where('? >= published_at and draft = ?', DateTime.now, false).includes(:user).page params[:page]
     end
 
     # GET /blog/posts/1
     def show
     end
+
     def show_list
+      @blog_post.increment!(:access_count)
     end
 
     # GET /blog/posts/new

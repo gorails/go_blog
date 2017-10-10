@@ -10,7 +10,7 @@
           <div class="col-md-12">
             <div class="font-s12 push-10">
               <em class="pull-right"><!--10 min--></em>
-              <a href="base_pages_profile.php"><%= resource.user.decorate.name %></a> <%= converte_date(resource.published_at) %>
+             <%= resource.decorate.link_to_author %> - <%= converte_date(resource.published_at) %>
             </div>
             <h4 class="text-uppercase push-10">
               <%= resource.decorate.link_to_title %></h4>
@@ -24,3 +24,4 @@
       </div>
     </div>
 <% end %>
+

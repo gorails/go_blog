@@ -11,7 +11,7 @@
   <div class="bg-white">
     <section class="content content-boxed">
       <div class="text-center">
-        <a class="link-effect font-s13 font-w600" href="javascript:void(0)"><%= @blog_post.user.decorate.name %></a> <%= converte_date(@blog_post.published_at) %> <em></em>
+        <%= @blog_post.decorate.link_to_author %> - <%= converte_date(@blog_post.published_at) %> <em>visualizado <%=@blog_post.access_count%></em>
       </div>
       <div class="row push-50-t push-50 nice-copy-story">
         <div class="col-sm-8 col-sm-offset-2">

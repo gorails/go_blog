@@ -23,6 +23,18 @@ module Blog
       end
     end
 
+
+    def link_to_author
+      h.link_to h.user_path(id: self.user),
+                class: 'link-effect font-s13 font-w600',
+                title: '',
+                style: '' do
+        h.content_tag :span do
+          self.user.decorate.name
+        end
+      end
+    end
+
     def link_to_title
       h.link_to h.show_list_blog_posts_path(id: self.id),
                 class: 'text-primary-dark',
