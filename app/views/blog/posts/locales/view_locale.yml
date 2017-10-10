@@ -1,0 +1,35 @@
+pt-BR:
+  blog_post:
+    default: &default
+      h1: Link
+      header: "Lista de links"
+      block_header: links
+    index:
+      <<: *default
+      header: "Lista de links"
+      block_header: links
+    show:
+      <<: *default
+      header: "Detalhes: %{resource}"
+    edit:
+      <<: *default
+      header: "Editar: %{resource}"
+    new:
+      <<: *default
+      header: "Cadastrar Link"
+      title: "Cadastrar Link"
+    create:
+      alert: "Link não pode ser cadastrado."
+      notice: "Link cadastrado com sucesso."
+    update:
+      alert: "Link não pode ser atualizado."
+      notice: "Link atualizado com sucesso."
+    destroy:
+      alert: "Link não pode ser excluído."
+      notice: "Link excluído com sucesso."
+
+  helpers:
+    submit:
+      link:
+        create: "Cadastrar %{model}"
+        update: "Atualizar %{model}"
