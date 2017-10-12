@@ -1,7 +1,7 @@
 <% collection.each do |resource| %>
     <tr id="<%= dom_id(resource) %>">
       <td><%= resource.title %></td>
-      <td><%= truncate_with_hover(resource.teaser.html_safe, 30) %></td>
+      <td><%= raw(truncate_with_hover(resource.teaser, 30)) %></td>
       <td><%= resource.draft %></td>
       <td><%= converte_date(resource.published_at) %></td>
       <td><%= resource.user_id %></td>

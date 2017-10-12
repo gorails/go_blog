@@ -14,7 +14,7 @@
             </div>
             <h4 class="text-uppercase push-10">
               <%= resource.decorate.link_to_title %></h4>
-            <p class="push-20"><%= truncate_with_hover(resource.teaser.html_safe,30) %></p>
+            <p class="push-20"><%= raw(truncate_with_hover(resource.teaser,30)) %></p>
             <div class="btn-group btn-group-sm">
               <!--<a class="btn btn-default" href="javascript:void(0)"><i class="fa fa-share-alt push-5-r"></i> Compartilhar</a>-->
               <%= resource.decorate.link_to_read_more %>
