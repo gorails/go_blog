@@ -25,8 +25,18 @@
 
 <script type="text/javascript">
     $(document).ready(function() {
-        $('#blog_post_teaser').summernote();
-        $('#blog_post_body').summernote();
+        $('#blog_post_teaser').summernote({
+            lang: 'pt-BR',
+            codemirror: { // codemirror options
+                theme: 'monokai'
+            }
+        });
+        $('#blog_post_body').summernote({
+            lang: 'pt-BR',
+            codemirror: { // codemirror options
+                theme: 'monokai'
+            }
+        });
     });
 </script>
 
