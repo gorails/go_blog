@@ -15,7 +15,7 @@
 
     <%= f.input :custom_url, id: :blog_post_custom_url %>
 
-
+    <%= f.input :all_tags, placeholder: "Tags separated with comma" %>
 
     <div class="form-group form-actions">
       <%= link_to I18n.t('misc.action.back'), blog_posts_path, class: 'btn btn-sm btn-square btn-default' %>
@@ -24,7 +24,7 @@
 <% end %>
 
 <script type="text/javascript">
-    $(document).ready(function() {
+    $(document).ready(function () {
         $('#blog_post_teaser').summernote({
             lang: 'pt-BR',
             codemirror: { // codemirror options

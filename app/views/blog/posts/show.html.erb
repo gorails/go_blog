@@ -66,6 +66,10 @@
                 <td><strong><%= t 'activerecord.attributes.blog_post.access_count' %>:</strong></td>
                 <td><%= @blog_post.access_count %></td>
               </tr>
+              <tr>
+                <td><strong><%= t 'activerecord.attributes.blog_post.tags' %>:</strong></td>
+                <td><%=raw tag_links(@blog_post.all_tags)%></td>
+              </tr>
 
 
               </tbody>
