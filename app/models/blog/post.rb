@@ -8,5 +8,11 @@ module Blog
       teaser if !teaser.blank?
       body if !body.blank?
     end
+
+    def reading_time
+      words_per_minute = 150
+      text = Nokogiri::HTML(self.body).at('body').inner_text
+      (text.scan(/\w+/).length / words_per_minute).to_i
+    end
   end
 end
