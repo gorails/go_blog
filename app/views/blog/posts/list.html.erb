@@ -151,8 +151,12 @@
   <div class="bg-primary-dark">
     <section class="content content-full content-boxed">
       <div class="push-20-t push-20 text-center">
-        <h3 class="h4 text-white-op push-20 visibility-hidden" data-toggle="appear"> <strong></strong> </h3>
-        <!--<a class="btn btn-rounded btn-noborder btn-lg btn-success visibility-hidden" data-toggle="appear" data-class="animated bounceIn" href="frontend_pricing.php">Get Started Today</a>-->
+        <div class="tags-cloud glassy-bg">
+          <h4>Nuvem de Tags</h4>
+          <% tag_cloud Blog::Tag.counts, %w{css1 css2 css3 css4} do |tag, css_class| %>
+              <%= link_to tag.name, list_blog_posts_path(tag:tag.name), class: css_class %>
+          <% end %>
+        </div>
       </div>
     </section>
   </div>

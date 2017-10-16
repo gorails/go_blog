@@ -1,0 +1,20 @@
+language: ruby
+rvm:
+  - 2.4.2
+env:
+  #- DB=sqlite
+  #- DB=mysql
+  - DB=postgresql
+before_install: cp config/database.travis.yml config/database.yml
+script:
+  - export RAILS_ENV=test
+  - bundle exec rake db:create db:migrate
+  - bundle exec rake db:test:prepare
+  - bundle exec rspec
+after_success:
+  - coveralls
+deploy:
+    provider: rubygems
+    api_key ...
+    on:
+        tags: true

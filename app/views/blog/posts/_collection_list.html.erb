@@ -2,15 +2,15 @@
     <div class="block" id="<%= dom_id(resource) %>">
       <div class="block-content">
         <div class="row items-push">
-          <div class="col-md-4">
-            <a href="frontend_blog_story.php">
-              <img class="img-responsive" src="assets/img/photos/photo21.jpg" alt="">
-            </a>
-          </div>
+          <!--<div class="col-md-4">-->
+            <!--<a href="frontend_blog_story.php">-->
+              <!--<img class="img-responsive" src="https://wallpaperbrowse.com/media/images/html-color-codes-color-tutorials-hero-00e10b1f.jpg" alt="">-->
+            <!--</a>-->
+          <!--</div>-->
           <div class="col-md-12">
             <div class="font-s12 push-10">
-              <em class="pull-right"><!--10 min--></em>
-             <%= resource.decorate.link_to_author %> - <%= converte_date(resource.published_at) %>
+              <em class="pull-right"><%=pluralize(resource.reading_time, 'minuto')%></em>
+             <%= resource.decorate.link_to_author %> - publicado em <%= converte_date(resource.published_at) %>
             </div>
             <h4 class="text-uppercase push-10">
               <%= resource.decorate.link_to_title %></h4>
