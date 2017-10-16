@@ -9,6 +9,11 @@ module Blog
       Tag.find_by_name!(name).posts.where('? >= published_at and draft = ?', DateTime.now, false).includes(:user)
     end
 
+    def text
+       return teaser if teaser.present? and !teaser.blank?
+       body if body.present? and !body.blank?
+    end
+
     def reading_time
       words_per_minute = 150
       text = Nokogiri::HTML(self.body).at('body').inner_text
