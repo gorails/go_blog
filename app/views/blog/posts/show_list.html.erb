@@ -13,7 +13,7 @@
       <div class="text-center">
         <%= @blog_post.decorate.link_to_author %> - <%= converte_date(@blog_post.published_at) %> <em>visualizado <%=@blog_post.access_count%> x- <div class="wordcount">
         <i class="fa fa-clock-o"></i>
-        <span><%=pluralize(@blog_post.reading_time, 'minutos')%></span>
+        <span><%=pluralize(@blog_post.reading_time, 'minuto')%></span>
       </div></em>
       </div>
       <div class="row push-50-t push-50 nice-copy-story">
@@ -23,8 +23,15 @@
 
         </div>
       </div>
+
     </section>
   </div>
+
+  <section class="content content-full content-boxed">
+    <div class="push-20-t push-20 text-center">
+      <h3 class="h4 text-white-op push-20 animated fadeIn" data-toggle="appear"> <%=raw tag_links(@blog_post.all_tags)%></h3>
+    </div>
+  </section>
 
 </main>
 

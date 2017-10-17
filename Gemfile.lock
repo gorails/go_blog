@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    go_blog (0.1.8)
+    go_blog (0.1.9)
       draper
       pg
       rails
@@ -54,7 +54,7 @@ GEM
     builder (3.2.3)
     concurrent-ruby (1.0.5)
     crass (1.0.2)
-    draper (3.0.0)
+    draper (3.0.1)
       actionpack (~> 5.0)
       activemodel (~> 5.0)
       activemodel-serializers-xml (~> 1.0)

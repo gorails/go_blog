@@ -5,11 +5,20 @@ module Blog
     load_and_authorize_resource except: [:list, :show_list, :create]
     # GET /blog/posts
     def index
-      @blog_posts = Post.all.page params[:page]
+      if params[:tag]
+        @blog_posts = Post.tagged_with(params[:tag]).page params[:page]
+      else
+        @blog_posts = Post.all.page params[:page]
+      end
     end
 
     def list
-      @blog_posts = Post.where('? >= published_at and draft = ?', DateTime.now, false).includes(:user).page params[:page]
+
+      if params[:tag]
+        @blog_posts = Post.tagged_with(params[:tag]).page params[:page]
+      else
+        @blog_posts = Post.where('? >= published_at and draft = ?', DateTime.now, false).includes(:user).page params[:page]
+      end
     end
 
     # GET /blog/posts/1
@@ -64,7 +73,7 @@ module Blog
 
     # Only allow a trusted parameter "white list" through.
     def blog_post_params
-      params.require(:blog_post).permit(:title, :teaser, :body, :draft, :published_at, :user_id, :custom_url, :access_count)
+      params.require(:blog_post).permit(:title, :teaser, :body, :draft, :published_at, :user_id, :custom_url, :access_count,:all_tags)
     end
   end
 end
