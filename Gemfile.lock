@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    go_blog (0.1.9)
+    go_blog (0.1.10)
       draper
       pg
       rails
@@ -63,7 +63,8 @@ GEM
     erubi (1.7.0)
     globalid (0.4.0)
       activesupport (>= 4.2.0)
-    i18n (0.8.6)
+    i18n (0.9.0)
+      concurrent-ruby (~> 1.0)
     loofah (2.1.1)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
