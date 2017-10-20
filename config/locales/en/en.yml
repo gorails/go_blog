@@ -2,6 +2,8 @@ en:
   blog_posts:
     index:
       title: 'Posts'
+    new:
+      title: 'Novo post'
   blog_post:
     new:
       header: 'New post'
