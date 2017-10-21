@@ -11,10 +11,7 @@
   <div class="bg-white">
     <section class="content content-boxed">
       <div class="text-center">
-        <%= @blog_post.decorate.link_to_author %> - <%= converte_date(@blog_post.published_at) %> <em>visualizado <%=@blog_post.access_count%> x- <div class="wordcount">
-        <i class="fa fa-clock-o"></i>
-        <span><%=pluralize(@blog_post.reading_time, 'minuto')%></span>
-      </div></em>
+        <%= @blog_post.decorate.link_to_author %> <% if @blog_post.published_at or (current_user and current_user.admin?) %> - <% end %> <%= converte_timestamp(@blog_post.published_at) %> <% if current_user and current_user.admin? %><em>visualizado <%=@blog_post.access_count%> <% end %></em>
       </div>
       <div class="row push-50-t push-50 nice-copy-story">
         <div class="col-sm-8 col-sm-offset-2">
