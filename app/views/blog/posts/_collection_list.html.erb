@@ -14,7 +14,13 @@
             </div>
             <h4 class="text-uppercase push-10">
               <%= resource.decorate.link_to_title %></h4>
-            <p class="push-20"><%= raw(resource.teaser) %></p>
+            <p>
+              <% if resource.teaser.present? %>
+                  <%= raw resource.text %>
+              <% else %>
+                  <%= raw Truncato.truncate resource.text, max_length: 150, count_tags: false%>
+              <% end %>
+            </p>
             <div class="btn-group btn-group-sm">
               <!--<a class="btn btn-default" href="javascript:void(0)"><i class="fa fa-share-alt push-5-r"></i> Compartilhar</a>-->
               <%= resource.decorate.link_to_read_more %>
