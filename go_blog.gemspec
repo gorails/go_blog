@@ -18,7 +18,5 @@ Gem::Specification.new do |s|
 
   s.add_dependency "draper"
   s.add_dependency "rails"
-  s.add_dependency "pg"
-  #s.add_dependency "sqlite3"
 
 end
