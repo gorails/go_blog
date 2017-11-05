@@ -1,7 +1,6 @@
 <%= simple_form_for @blog_post, class: "form-horizontal" do |f| %>
     <%= f.error_notification %>
 
-    <%= f.hidden_field :user_id, id: :blog_post_user_id, value: current_user.id %>
 
     <%= f.input :title, id: :blog_post_title %>
 
