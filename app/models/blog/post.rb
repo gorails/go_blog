@@ -4,6 +4,7 @@ module Blog
     belongs_to :user
     has_many :taggings
     has_many :tags, through: :taggings
+    has_many :comments,class_name: 'Comment::Comment', as: :commentable
 
     def self.tagged_with(name)
       Tag.find_by_name!(name).posts.where('? >= published_at and draft = ?', DateTime.now, false).includes(:user)

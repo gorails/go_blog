@@ -12,3 +12,4 @@ gemspec
 
 # To use a debugger
 # gem 'byebug', group: [:development, :test]
+gem 'go_comments',path: '/home/jcottobboni/Projetos/engines/go_comments'
