@@ -12,3 +12,12 @@ gemspec
 
 # To use a debugger
 # gem 'byebug', group: [:development, :test]
+
+group :test do
+  gem 'cpf_faker'
+  gem 'rspec-rails'
+  gem 'shoulda-matchers'
+  gem 'simplecov'
+  gem 'codeclimate-test-reporter'
+  gem 'database_cleaner'
+end

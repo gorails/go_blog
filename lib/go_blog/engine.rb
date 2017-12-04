@@ -17,7 +17,10 @@ module GoBlog
     config.time_zone = 'Brasilia'
     config.i18n.load_path += Dir[config.root.join('config', 'locales','**', '*.{rb,yml}').to_s]
     config.encoding = "utf-8"
-
+    config.generators do |g|
+      g.test_framework :rspec
+      g.fixture_replacement :factory_girl, :dir => 'spec/factories'
+    end
 
   end
 
