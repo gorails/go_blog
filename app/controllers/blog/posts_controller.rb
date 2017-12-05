@@ -1,6 +1,5 @@
 module Blog
   class PostsController < ApplicationController
-    respond_to :html, :json
     before_action :set_blog_post, only: [:show, :edit, :update, :destroy, :show_list]
     before_action :authenticate_user!, except: [:list, :show_list]
     load_and_authorize_resource except: [:list, :show_list, :create]

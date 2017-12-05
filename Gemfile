@@ -13,9 +13,9 @@ gemspec
 # To use a debugger
 # gem 'byebug', group: [:development, :test]
 
-gem 'coveralls', '>= 0.8.21', require: false
-gem 'pg'
 group :test do
+  gem 'coveralls', '>= 0.8.21', require: false
+  gem 'pg'
   gem 'kaminari'
   gem 'cancancan'
   gem 'devise'
@@ -28,7 +28,5 @@ group :test do
   gem 'simplecov'
   gem 'codeclimate-test-reporter'
   gem 'database_cleaner'
-end
-group :test, :development do
   gem 'factory_bot_rails'
 end
