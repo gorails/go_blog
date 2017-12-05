@@ -9,8 +9,6 @@ before_install:
 script:
   - export RAILS_ENV=test
   - bundle exec rake db:create db:migrate
-  - bundle exec rake app:db:test:prepare
-  - bundle exec rake app:db:setup
   - bundle exec rspec
 after_success:
   - coveralls

@@ -14,12 +14,12 @@ gemspec
 # gem 'byebug', group: [:development, :test]
 
 gem 'coveralls', '>= 0.8.21', require: false
+gem 'pg'
 group :test do
   gem 'kaminari'
   gem 'cancancan'
   gem 'devise'
   gem 'jbuilder'
-  gem 'sqlite3'
   gem 'cpf_faker'
   gem 'ffaker'
   gem 'rspec-rails'
