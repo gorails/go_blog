@@ -13,11 +13,22 @@ gemspec
 # To use a debugger
 # gem 'byebug', group: [:development, :test]
 
+gem 'coveralls', '>= 0.8.21', require: false
 group :test do
+  gem 'kaminari'
+  gem 'cancancan'
+  gem 'devise'
+  gem 'jbuilder'
+  gem 'sqlite3'
   gem 'cpf_faker'
+  gem 'ffaker'
   gem 'rspec-rails'
+  gem 'rails-controller-testing'
   gem 'shoulda-matchers'
   gem 'simplecov'
   gem 'codeclimate-test-reporter'
   gem 'database_cleaner'
+end
+group :test, :development do
+  gem 'factory_bot_rails'
 end

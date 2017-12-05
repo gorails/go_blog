@@ -19,7 +19,7 @@ module GoBlog
     config.encoding = "utf-8"
     config.generators do |g|
       g.test_framework :rspec
-      g.fixture_replacement :factory_girl, :dir => 'spec/factories'
+      g.factory_bot dir: Dir[config.root.join('spec', 'factories').to_s]
     end
 
   end
