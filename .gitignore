@@ -21,7 +21,7 @@ spec/dummy/tmp/
 .ruby-version
 .ruby-gemset
 /public/uploads/*
-schema.rb
+/db/schema.rb
 config/initializers/secret_token.rb
 /coverage/*
 
