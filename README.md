@@ -21,7 +21,6 @@ Or install it yourself as:
 $ gem install go_blog
 ```
 
-## Testes [![Build Status](https://travis-ci.org/gorails/go_blog.svg?branch=master)](https://travis-ci.org/gorails/gorails)  [![Coverage Status](https://coveralls.io/repos/github/gorails/go_blog/badge.svg?branch=master)](https://coveralls.io/github/gorails/go_blog?branch=master)
 
 ## Contributing
 Contribution directions go here.
