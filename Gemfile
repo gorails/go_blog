@@ -12,6 +12,7 @@ gemspec
 
 # To use a debugger
 # gem 'byebug', group: [:development, :test]
+gem 'go_comments',path: '/home/jcottobboni/Projetos/engines/go_comments'
 
 group :test do
   gem 'coveralls', '>= 0.8.21', require: false

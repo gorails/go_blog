@@ -20,4 +20,5 @@ Gem::Specification.new do |s|
   s.add_dependency "rails"
   s.add_dependency "rspec-rails", "~> 3.7.1"
 
+
 end
