@@ -13,7 +13,6 @@ module Blog
     end
 
     def list
-
       if params[:tag]
         @blog_posts = Post.tagged_with(params[:tag]).page params[:page]
       else
