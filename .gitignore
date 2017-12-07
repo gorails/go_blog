@@ -1,10 +1,10 @@
 .bundle/
 log/*.log
 pkg/
-test/dummy/db/*.sqlite3
-test/dummy/db/*.sqlite3-journal
-test/dummy/log/*.log
-test/dummy/tmp/
+spec/dummy/db/*.sqlite3
+spec/dummy/db/*.sqlite3-journal
+spec/dummy/log/*.log
+spec/dummy/tmp/
 
 
 # Ignore bundler config.
@@ -21,7 +21,7 @@ test/dummy/tmp/
 .ruby-version
 .ruby-gemset
 /public/uploads/*
-schema.rb
+/db/schema.rb
 config/initializers/secret_token.rb
 /coverage/*
 
