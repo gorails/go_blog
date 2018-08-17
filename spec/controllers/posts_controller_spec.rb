@@ -3,6 +3,7 @@
 require 'rails_helper'
 require 'factories/post'
 require 'factories/user'
+
 RSpec.describe Blog::PostsController, type: :controller do
   describe 'Unsigned users' do
     describe '#list' do

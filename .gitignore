@@ -28,6 +28,7 @@ config/initializers/secret_token.rb
 # Ignore application configuration
 /config/application.yml
 newrelic.yml
+/spec/dummy/config/database.yml
 /config/database.yml
 /config/application.yml
 /config/secrets.yml
