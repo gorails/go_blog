@@ -4,7 +4,7 @@ rvm:
 services:
   - postgresql
 before_install:
-  - cp config/database.travis.yml config/database.yml
+  - cp config/database.travis.yml spec/dummy/config/database.yml
   - psql -c 'create database goblog_test;' -U postgres
 script:
   - export RAILS_ENV=test
